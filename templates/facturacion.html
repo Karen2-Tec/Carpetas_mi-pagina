@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}AnieStyle - Facturación{% endblock %}
+
+{% block content %}
+<div class="py-4">
+    <h2 class="display-5 fw-black text-uppercase header-border mb-4">Facturación</h2>
+    <div class="table-responsive">
+        <table class="table table-dark table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>ID Factura</th>
+                    <th>Cliente</th>
+                    <th>Fecha</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for factura in facturas %}
+                <tr>
+                    <td>{{ factura.id }}</td>
+                    <td>{{ factura.cliente }}</td>
+                    <td>{{ factura.fecha }}</td>
+                    <td>${{ factura.total }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

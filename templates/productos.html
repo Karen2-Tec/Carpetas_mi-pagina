@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}AnieStyle - Productos{% endblock %}
+
+{% block content %}
+<div class="py-4">
+    <div class="vitrina-top mb-4">
+        <div>
+            <h2 class="display-5 fw-black text-uppercase header-border m-0">Inventario de la Tienda</h2>
+            <p class="brand-subtitle text-muted-urban mt-1 mb-0">Listado completo de productos disponibles</p>
+        </div>
+        <span class="badge bg-danger fs-5 py-2 px-4 rounded-pill">Total: {{ productos|length }}</span>
+    </div>
+
+    <div class="row g-4">
+        {% for producto in productos %}
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card product-inventory-card h-100 d-flex flex-column justify-content-between p-3">
+                <div>
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span class="tag-cat">{{ producto.categoria }}</span>
+                        <small class="text-secondary">ID: {{ producto.id }}</small>
+                    </div>
+                    <h4 class="h5 text-white fw-bold card-title">{{ producto.nombre }}</h4>
+                    <p class="text-muted-urban small card-text">{{ producto.descripcion }}</p>
+                </div>
+                <div class="mt-3">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        {% if producto.stock > 0 %}
+                        <span class="badge-stock-dinamico" style="background: rgba(34, 197, 94, 0.1); color: #22c55e;">En Stock: {{ producto.stock }} uds</span>
+                        {% else %}
+                        <span class="badge-stock-dinamico" style="background: rgba(239, 68, 68, 0.1); color: #ef4444;">Out of Stock</span>
+                        {% endif %}
+                    </div>
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-outline-light btn-sm w-50 fw-bold text-uppercase">Detalles</button>
+                        <button class="btn btn-outline-danger btn-sm w-50 fw-bold text-uppercase">Eliminar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

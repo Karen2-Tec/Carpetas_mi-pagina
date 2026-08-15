@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}AnieStyle - Inicio{% endblock %}
+
+{% block content %}
+<!-- Hero Banner -->
+<section class="py-2">
+    <div class="hero-urban-banner p-5 rounded-4 mb-5 position-relative overflow-hidden d-flex align-items-center">
+        <div class="hero-overlay"></div>
+        <div class="position-relative z-index-2 text-start max-width-hero">
+            <span class="badge bg-danger text-uppercase fw-bold px-3 py-2 mb-3 tracking-wider">Temporada Drop 2026</span>
+            <h1 class="display-3 fw-black text-uppercase text-white line-height-tight mb-3">AnieStyle</h1>
+            <p class="lead text-gray-light mb-4">No seguimos tendencias de masas, traemos la cultura pesada underground directo a tu clóset. Explora el inventario de piezas limitadas o gestiona los nuevos lanzamientos del catálogo.</p>
+            <div class="d-flex gap-3 flex-wrap">
+                <a href="{{ url_for('productos_view') }}" class="btn btn-cherry btn-lg px-4 py-3 fw-bold text-uppercase fs-6">Explorar Catálogo</a>
+                <a href="#" class="btn btn-outline-light btn-lg px-4 py-3 fw-bold text-uppercase fs-6">Administrar Stock</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Quiénes Somos -->
+<section class="py-4">
+    <h2 class="display-5 fw-black text-uppercase header-border mb-4">Quiénes Somos</h2>
+    <p class="text-muted-urban mb-4">AnieStyle nació en el asfalto como una respuesta directa a la cultura urbana underground. Somos un sistema web y espacio de moda enfocado en la curaduría extrema de estilos icónicos como el "Baggy Street Drip" y la sofisticación ruda del "Cherry Red Luxe".</p>
+    <div class="row g-4 mt-2">
+        <div class="col-12 col-md-6">
+            <div class="card card-urban h-100 card-hover-effect">
+                <img src="https://i.pinimg.com/736x/da/8c/9c/da8c9c3c48e56cb5b4fd691090dfb994.jpg" class="card-img-top img-fluid img-custom-height" alt="Estilo urbano baggy oversize">
+                <div class="card-body p-4">
+                    <h3 class="h5 fw-bold text-uppercase text-white">Estilo Urbano Premium</h3>
+                    <p class="card-text text-muted-urban small">Redefiniendo el streetwear contemporáneo. Siluetas masivas diseñadas para el movimiento urbano.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6">
+            <div class="card card-urban h-100 card-hover-effect">
+                <img src="https://i.pinimg.com/736x/c0/aa/fd/c0aafd4a7c958824a881c8554f7ef2ae.jpg" class="card-img-top img-fluid img-custom-height" alt="Moda urbana cuero rojo cherry">
+                <div class="card-body p-4">
+                    <h3 class="h5 fw-bold text-uppercase text-white">Elegance and Seduction</h3>
+                    <p class="card-text text-muted-urban small">El poder del rojo cereza en su versión más audaz. Un contraste impecable entre el denim y la sofisticación.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
